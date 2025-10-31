@@ -1,0 +1,210 @@
+/* --- Global Styles --- */
+body {
+    /* Primary Colour from content.txt */
+    background-color: #aad4cf;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 0 20px;
+    /* Add horizontal padding */
+}
+
+h1,
+h2 {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    /* Mockup uses a serif font for headings */
+    color: #2a525a;
+    /* A darker shade for contrast */
+}
+
+/* --- Header & Header Image --- */
+.header {
+    position: relative;
+    /* Parent container for absolute positioning */
+    width: 100%;
+}
+
+.header img {
+    width: 100%;
+    /* Make image responsive */
+    display: block;
+    /* Remove bottom space under image */
+}
+
+.header h1 {
+    position: absolute;
+    /* Position title on top of the image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Center the title perfectly */
+
+    color: white;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    /* Text shadow for readability */
+}
+
+/* --- Navigation --- */
+nav {
+    background-color: #f4f4f4;
+    /* Solid background as seen in mockup */
+    padding: 1rem 0;
+    border-bottom: 2px solid #ccc;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    /* Horizontal navigation */
+    margin: 0 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    /* Matches mockup */
+}
+
+nav ul li a:hover {
+    color: #2a525a;
+}
+
+/* --- Main Content --- */
+main section,
+main article {
+    margin-bottom: 2.5rem;
+    /* Space between sections */
+}
+
+/* --- Article: Life of a Starfish --- */
+#story .article-img {
+    float: left;
+    /* Requirement: Image should have text wrapping */
+    width: 250px;
+    /* Use the re-uploaded image filename */
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border: 3px solid #ccc;
+    /* Border as seen in mockup */
+}
+
+/* Clearfix to contain the floated image */
+#story::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* --- Facts Section --- */
+#facts ul {
+    list-style-type: disc;
+    /* Requirement: Use proper syntax for listing */
+    margin-left: 20px;
+    padding-left: 15px;
+}
+
+#facts li {
+    margin-bottom: 8px;
+    /* Space between bullet points */
+}
+
+/* --- Contact Form --- */
+#contact form {
+    border: 2px solid #ccc;
+    /* Border as seen in mockup */
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Semi-transparent white background */
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+#contact label,
+#contact legend {
+    display: block;
+    /* Makes label appear on its own line */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Style text inputs and textarea */
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    /* Includes padding in the 100% width */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#contact textarea {
+    height: 150px;
+    resize: vertical;
+    /* Allow vertical resize only */
+}
+
+/* Style radio buttons */
+#contact fieldset {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 15px;
+}
+
+/* Style radio labels to be inline with buttons */
+#contact fieldset label {
+    display: inline-block;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+#contact input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Style submit button */
+#contact button {
+    background-color: #555;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#contact button:hover {
+    background-color: #2a525a;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: right;
+    /* Aligned right in mockup */
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #333;
+}
