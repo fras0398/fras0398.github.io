@@ -107,7 +107,6 @@ header {
     background-color: var(--dark-color);
     color: var(--white-color);
     padding: 20px 0;
-    /* Scaled Up Padding */
 }
 
 .header-content {
@@ -126,7 +125,6 @@ header {
 
 .logo img {
     height: 60px;
-    /* Scaled Up Logo */
 }
 
 nav ul {
@@ -143,9 +141,7 @@ nav .nav-link {
     text-decoration: none;
     font-weight: 700;
     padding: 15px 20px;
-    /* Scaled Up Padding */
     font-size: 1.1rem;
-    /* Scaled Up Font */
     transition: all 0.3s;
 }
 
@@ -164,7 +160,6 @@ nav .nav-link.active {
 
 .search-bar input {
     padding: 10px;
-    /* Scaled Up */
     font-size: 1rem;
     border: none;
     border-radius: 2px 0 0 2px;
@@ -172,7 +167,6 @@ nav .nav-link.active {
 
 .search-bar button {
     padding: 8px 12px;
-    /* Scaled Up */
     background-color: transparent;
     border: 1px solid var(--white-color);
     color: var(--white-color);
@@ -185,9 +179,7 @@ nav .nav-link.active {
 
 .search-icon {
     width: 20px;
-    /* Scaled Up */
     height: 20px;
-    /* Stroke colour set inline in HTML to #c78c06 */
 }
 
 /* =========================================
@@ -206,7 +198,6 @@ nav .nav-link.active {
     justify-content: center;
 }
 
-/* Dark overlay BEHIND TEXT ONLY. Text aligned LEFT */
 .hero-content-box {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 40px;
@@ -293,7 +284,6 @@ nav .nav-link.active {
    ========================================= */
 #vision {
     position: relative;
-    /* No dark background colour here */
 }
 
 .vision-image {
@@ -403,7 +393,6 @@ nav .nav-link.active {
     text-align: left;
 }
 
-/* FIX: Centred "Days" and "Hours" text */
 .contact-hours th {
     text-align: center;
 }
@@ -420,7 +409,6 @@ footer {
     background-color: var(--dark-color);
     color: var(--primary-color);
     text-align: left;
-    /* Aligned left */
     padding: 20px 15px;
     font-size: 0.9rem;
 }
@@ -443,9 +431,7 @@ footer a {
     .header-content {
         flex-direction: row;
         justify-content: center;
-        /* Centre the whole block */
         gap: 60px;
-        /* Bring Logo/Nav and Search closer */
     }
 
     .logo-nav-wrapper {
@@ -492,7 +478,6 @@ footer a {
         grid-column: span 2;
     }
 
-    /* Vision: Content Left aligned */
     .vision-overlay {
         justify-content: flex-start;
         text-align: left;
@@ -500,17 +485,14 @@ footer a {
 
     .vision-content {
         width: 100%;
-        /* Spans full width */
         padding-left: 15px;
     }
 
     /* TEAM CHECKERBOARD */
-    /* FIX: Added side margins by using container width instead of 100% */
     .team-grid {
         display: flex;
         flex-direction: column;
         gap: 0;
-        /* Using the standard container max-width (1200px) creates side margins on large screens */
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 15px;
@@ -580,12 +562,10 @@ footer a {
     footer {
         padding: 20px 0;
         text-align: center;
-        /* Centre the container... */
     }
 
     footer>p {
         text-align: left;
-        /* ...but left align text inside */
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 15px;
