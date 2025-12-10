@@ -8,8 +8,9 @@
 }
 
 :root {
+    /* Colour Palette */
     --primary-color: #c78c06;
-    /* Gold/Mustard */
+    /* Gold/Yellow */
     --secondary-color: #ffe6ac;
     /* Beige/Light Yellow */
     --dark-color: #222;
@@ -31,6 +32,7 @@ img {
     height: auto;
 }
 
+/* Accessibility: Visually hidden class for search label */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -42,6 +44,7 @@ img {
     border: 0;
 }
 
+/* Main Container (Max width 1200px) */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -62,7 +65,7 @@ p {
     margin-bottom: 20px;
 }
 
-/* Base Button Styles */
+/* === BUTTON STYLES === */
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -78,16 +81,23 @@ p {
     font-size: 0.8em;
 }
 
-/* Primary Button (Gold) */
+/* Hero Button: Gold bg, Dark Text */
 .btn-primary {
     background-color: var(--primary-color);
     color: var(--dark-color);
 }
 
-/* Dark Button (for Vision and Forms) */
-.btn-dark {
+/* Contact Button: Dark bg, Gold Text */
+.btn-contact {
     background-color: var(--dark-color);
+    color: var(--primary-color);
+}
+
+/* Vision Button: Dark bg, White Text, Yellow Outline */
+.btn-vision {
+    background-color: var(--dark-color); /* Changed from transparent */
     color: var(--white-color);
+    border: 2px solid var(--primary-color); /* Kept the gold border */
 }
 
 /* =========================================
@@ -96,25 +106,27 @@ p {
 header {
     background-color: var(--dark-color);
     color: var(--white-color);
-    padding: 15px 0;
+    padding: 20px 0;
+    /* Scaled Up Padding */
 }
 
 .header-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .logo-nav-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .logo img {
-    height: 50px;
+    height: 60px;
+    /* Scaled Up Logo */
 }
 
 nav ul {
@@ -125,13 +137,15 @@ nav ul {
     gap: 15px;
 }
 
-/* Navigation Links */
 nav .nav-link {
-    /* MOCKUP MATCH: Text is yellow (Gold) on dark background */
     color: var(--primary-color);
+    /* Gold text */
     text-decoration: none;
     font-weight: 700;
-    padding: 10px 15px;
+    padding: 15px 20px;
+    /* Scaled Up Padding */
+    font-size: 1.1rem;
+    /* Scaled Up Font */
     transition: all 0.3s;
 }
 
@@ -139,7 +153,6 @@ nav .nav-link:hover {
     color: var(--white-color);
 }
 
-/* Active Link (Home) - Gold Block, Dark Text */
 nav .nav-link.active {
     background-color: var(--primary-color);
     color: var(--dark-color) !important;
@@ -150,18 +163,18 @@ nav .nav-link.active {
 }
 
 .search-bar input {
-    padding: 8px;
+    padding: 10px;
+    /* Scaled Up */
+    font-size: 1rem;
     border: none;
     border-radius: 2px 0 0 2px;
 }
 
-/* Search Icon Button */
 .search-bar button {
-    padding: 6px 10px;
+    padding: 8px 12px;
+    /* Scaled Up */
     background-color: transparent;
-    /* Transparent as per mockup detail? Or white? */
     border: 1px solid var(--white-color);
-    /* White border to match input height */
     color: var(--white-color);
     cursor: pointer;
     border-radius: 0 2px 2px 0;
@@ -171,8 +184,10 @@ nav .nav-link.active {
 }
 
 .search-icon {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    /* Scaled Up */
+    height: 20px;
+    /* Stroke colour set inline in HTML to #c78c06 */
 }
 
 /* =========================================
@@ -185,21 +200,20 @@ nav .nav-link.active {
     text-align: center;
     color: var(--white-color);
     min-height: 450px;
-    /* Flexbox to center the content box */
+    /* Flexbox to centre the content box */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Dark overlay BEHIND TEXT ONLY */
+/* Dark overlay BEHIND TEXT ONLY. Text aligned LEFT */
 .hero-content-box {
     background-color: rgba(0, 0, 0, 0.6);
-    /* Semi-transparent dark box */
     padding: 40px;
     max-width: 800px;
     margin: 0 20px;
-    /* spacing on mobile */
     z-index: 2;
+    text-align: left;
 }
 
 .hero-content-box h1 {
@@ -213,7 +227,6 @@ nav .nav-link.active {
    ========================================= */
 #about {
     padding: 40px 0;
-    /* MOCKUP MATCH: Yellow background */
     background-color: var(--secondary-color);
 }
 
@@ -222,7 +235,7 @@ nav .nav-link.active {
 }
 
 /* =========================================
-   5. SERVICES SECTION (2 over 3 Grid)
+   5. SERVICES SECTION
    ========================================= */
 #services {
     background-color: var(--white-color);
@@ -280,14 +293,13 @@ nav .nav-link.active {
    ========================================= */
 #vision {
     position: relative;
-    background-color: #000;
+    /* No dark background colour here */
 }
 
 .vision-image {
     width: 100%;
     height: 350px;
     object-fit: cover;
-    opacity: 0.5;
 }
 
 .vision-overlay {
@@ -298,8 +310,9 @@ nav .nav-link.active {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    /* Align content to the left */
+    text-align: left;
 }
 
 .vision-content {
@@ -308,7 +321,7 @@ nav .nav-link.active {
 }
 
 /* =========================================
-   7. TEAM SECTION (Checkerboard)
+   7. TEAM SECTION
    ========================================= */
 #team {
     padding: 40px 0;
@@ -316,7 +329,6 @@ nav .nav-link.active {
 }
 
 .team-member {
-    /* Mobile: Stacked, Text box yellow */
     background-color: var(--secondary-color);
     margin-bottom: 20px;
 }
@@ -330,15 +342,17 @@ nav .nav-link.active {
 .team-info-wrapper {
     padding: 20px;
     background-color: var(--secondary-color);
-    /* Yellow text box */
 }
 
 .job-title {
-    color: var(--primary-color);
-    /* Gold text for title */
+    color: var(--dark-color);
     font-weight: 700;
-    font-style: italic;
-    margin-bottom: 10px;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--dark-color);
+    display: inline-block;
+    width: 100%;
 }
 
 /* =========================================
@@ -349,10 +363,8 @@ nav .nav-link.active {
     margin-bottom: 40px;
 }
 
-/* Form Container - Yellow Background */
 .contact-form {
-    background-color: var(--secondary-color);
-    padding: 20px;
+    padding: 0;
     margin-bottom: 20px;
 }
 
@@ -370,29 +382,35 @@ nav .nav-link.active {
 .form-group textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #777;
 }
 
 .contact-location {
     margin-bottom: 20px;
 }
 
-/* Hours Table */
 .contact-hours table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    border: 1px solid #000;
 }
 
 .contact-hours th,
 .contact-hours td {
-    border: 1px solid #ddd;
-    padding: 10px;
+    border: 1px solid #000;
+    padding: 10px 20px;
     text-align: left;
+}
+
+/* FIX: Centred "Days" and "Hours" text */
+.contact-hours th {
+    text-align: center;
 }
 
 .contact-hours thead th {
     background-color: var(--secondary-color);
+    font-weight: 400;
 }
 
 /* =========================================
@@ -400,10 +418,20 @@ nav .nav-link.active {
    ========================================= */
 footer {
     background-color: var(--dark-color);
-    color: var(--white-color);
-    text-align: center;
-    padding: 20px;
+    color: var(--primary-color);
+    text-align: left;
+    /* Aligned left */
+    padding: 20px 15px;
     font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: underline;
 }
 
 
@@ -412,10 +440,12 @@ footer {
    ========================================= */
 @media (min-width: 760px) {
 
-    /* Header Row */
     .header-content {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
+        /* Centre the whole block */
+        gap: 60px;
+        /* Bring Logo/Nav and Search closer */
     }
 
     .logo-nav-wrapper {
@@ -423,19 +453,15 @@ footer {
         gap: 30px;
     }
 
-    /* Hero Left Align */
     #hero {
-        justify-content: flex-start;
-        /* Align box to left */
+        justify-content: center;
     }
 
     .hero-content-box {
-        margin-left: 50px;
         text-align: left;
-        max-width: 50%;
+        max-width: 60%;
     }
 
-    /* About Us: Side by Side (Image Left, Content Right) */
     .about-grid {
         display: flex;
         gap: 30px;
@@ -451,7 +477,6 @@ footer {
         padding: 0;
     }
 
-    /* SERVICES GRID: 2 Top / 3 Bottom Layout */
     .services-grid {
         grid-template-columns: repeat(6, 1fr);
     }
@@ -467,24 +492,27 @@ footer {
         grid-column: span 2;
     }
 
-    /* Vision: Content Right */
+    /* Vision: Content Left aligned */
     .vision-overlay {
-        justify-content: flex-end;
+        justify-content: flex-start;
         text-align: left;
     }
 
     .vision-content {
-        width: 50%;
-        padding-right: 50px;
+        width: 100%;
+        /* Spans full width */
+        padding-left: 15px;
     }
 
-    /* TEAM GRID - CHECKERBOARD LAYOUT */
+    /* TEAM CHECKERBOARD */
+    /* FIX: Added side margins by using container width instead of 100% */
     .team-grid {
         display: flex;
         flex-direction: column;
         gap: 0;
-        /* Remove gap for solid look */
-        max-width: 100%;
+        /* Using the standard container max-width (1200px) creates side margins on large screens */
+        max-width: 1200px;
+        margin: 0 auto;
         padding: 0 15px;
     }
 
@@ -496,7 +524,6 @@ footer {
 
     .team-img-col {
         width: 50%;
-        /* Ensure image fills the height */
         display: flex;
     }
 
@@ -514,15 +541,14 @@ footer {
         justify-content: center;
     }
 
-    /* Bob Rite: Text Left, Image Right */
     .team-member:nth-child(even) {
         flex-direction: row-reverse;
     }
 
-    /* CONTACT LAYOUT */
+    /* Contact */
     .contact-top {
         display: flex;
-        gap: 30px;
+        gap: 40px;
         margin-bottom: 30px;
     }
 
@@ -549,5 +575,20 @@ footer {
 
     .contact-hours {
         width: 100%;
+    }
+
+    footer {
+        padding: 20px 0;
+        text-align: center;
+        /* Centre the container... */
+    }
+
+    footer>p {
+        text-align: left;
+        /* ...but left align text inside */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+        margin-bottom: 5px;
     }
 }
