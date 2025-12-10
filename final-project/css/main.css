@@ -1,37 +1,36 @@
-/* ----------------------------------------------------------------
-   CSS Reset (Requirement: Add CSS reset code)
-   ---------------------------------------------------------------- */
+/* =========================================
+   1. RESET & VARIABLES
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
-    /* This ensures padding and border are included in the element's total width and height */
     box-sizing: border-box;
 }
 
-/* ----------------------------------------------------------------
-   Global Styles (Requirement: Mobile-first approach, Open Sans, Colors)
-   ---------------------------------------------------------------- */
-
 :root {
-    /* Requirement: Color values used in the layout */
     --primary-color: #c78c06;
-    /* Yellow/Gold */
+    /* Gold/Mustard */
     --secondary-color: #ffe6ac;
-    /* Light Yellow/Cream */
+    /* Beige/Light Yellow */
     --dark-color: #222;
-    /* Near Black */
+    /* Dark Grey/Black */
     --white-color: #fff;
-    /* White */
+    --font-stack: 'Open Sans', sans-serif;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    /* Requirement: Open Sans font */
+    font-family: var(--font-stack);
     color: var(--dark-color);
     background-color: var(--white-color);
+    line-height: 1.6;
 }
 
-/* Utility class for accessibility (e.g., hiding the search label visually) */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -44,342 +43,317 @@ body {
 }
 
 .container {
-    /* Requirement: The maximum width of the container is 1200px */
     max-width: 1200px;
     margin: 0 auto;
-    /* Center the container */
     padding: 0 15px;
-    /* Added padding for mobile spacing */
-}
-
-/* Button Styling */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #a37205;
-    /* Darker primary color on hover */
-}
-
-h1,
-h2,
-h3 {
-    margin-bottom: 15px;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2rem;
+    margin: 30px 0 20px;
+}
+
+h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
 }
 
 p {
-    margin-bottom: 15px;
-    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+/* Base Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
 }
 
-/* ----------------------------------------------------------------
-   Header & Navigation (Requirement: Flexbox for one element - Header nav)
-   ---------------------------------------------------------------- */
+.btn span {
+    margin-left: 5px;
+    font-size: 0.8em;
+}
 
+/* Primary Button (Gold) */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+/* Dark Button (for Vision and Forms) */
+.btn-dark {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+/* =========================================
+   2. HEADER
+   ========================================= */
 header {
     background-color: var(--dark-color);
     color: var(--white-color);
-    padding: 10px 15px;
-    /* Flexbox for the whole header on mobile (stacking logo/nav/search) */
+    padding: 15px 0;
+}
+
+.header-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    gap: 15px;
 }
 
-header .logo img {
+.logo-nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
     height: 50px;
-    margin-bottom: 10px;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
-    /* Requirement: Flexbox for nav links */
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 10px;
+    gap: 15px;
 }
 
-nav ul li a {
-    color: var(--white-color);
-    text-decoration: none;
-    padding: 5px 10px;
-    display: block;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
+/* Navigation Links */
+nav .nav-link {
+    /* MOCKUP MATCH: Text is yellow (Gold) on dark background */
     color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 15px;
+    transition: all 0.3s;
+}
+
+nav .nav-link:hover {
+    color: var(--white-color);
+}
+
+/* Active Link (Home) - Gold Block, Dark Text */
+nav .nav-link.active {
+    background-color: var(--primary-color);
+    color: var(--dark-color) !important;
 }
 
 .search-bar form {
     display: flex;
-    justify-content: center;
 }
 
-.search-bar input[type="text"] {
+.search-bar input {
     padding: 8px;
-    border: 1px solid var(--primary-color);
-    border-right: none;
-    outline: none;
-    width: 150px;
+    border: none;
+    border-radius: 2px 0 0 2px;
 }
 
+/* Search Icon Button */
 .search-bar button {
-    background-color: var(--primary-color);
+    padding: 6px 10px;
+    background-color: transparent;
+    /* Transparent as per mockup detail? Or white? */
+    border: 1px solid var(--white-color);
+    /* White border to match input height */
     color: var(--white-color);
-    border: 1px solid var(--primary-color);
-    padding: 8px 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.search-bar button:hover {
-    background-color: #a37205;
-}
-
-/* ----------------------------------------------------------------
-   Hero Section 
-   ---------------------------------------------------------------- */
-#hero {
-    background: var(--secondary-color) url('../images/main-banner.jpg') no-repeat center center/cover;
-    color: var(--white-color);
-    /* Text color changed to white for contrast on the background image */
-    text-align: center;
-    padding: 50px 20px;
-    min-height: 350px;
+    border-radius: 0 2px 2px 0;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-#hero h1 {
-    font-size: 2.5em;
+.search-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+#hero {
+    background: url('../images/main-banner.jpg') no-repeat center center/cover;
+    position: relative;
+    padding: 80px 0;
+    text-align: center;
+    color: var(--white-color);
+    min-height: 450px;
+    /* Flexbox to center the content box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark overlay BEHIND TEXT ONLY */
+.hero-content-box {
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent dark box */
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 20px;
+    /* spacing on mobile */
+    z-index: 2;
+}
+
+.hero-content-box h1 {
+    font-size: 2.5rem;
+    color: var(--white-color);
     margin-top: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    /* Improve readability */
 }
 
-#hero p {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-}
-
-
-/* ----------------------------------------------------------------
-   About Us Section 
-   ---------------------------------------------------------------- */
+/* =========================================
+   4. ABOUT US (Yellow Background)
+   ========================================= */
 #about {
-    padding: 30px 15px;
-    text-align: center;
-}
-
-#about .about-image {
-    margin-bottom: 20px;
-}
-
-/* ----------------------------------------------------------------
-   Services Section (Requirement: CSS Grid for one element)
-   ---------------------------------------------------------------- */
-#services {
+    padding: 40px 0;
+    /* MOCKUP MATCH: Yellow background */
     background-color: var(--secondary-color);
-    padding: 30px 15px;
-    text-align: center;
 }
 
-#services h2 {
-    color: var(--dark-color);
+.about-content {
+    padding: 20px 0;
+}
+
+/* =========================================
+   5. SERVICES SECTION (2 over 3 Grid)
+   ========================================= */
+#services {
+    background-color: var(--white-color);
+    padding-bottom: 40px;
 }
 
 .services-grid {
     display: grid;
-    /* Requirement: CSS Grid */
     grid-template-columns: 1fr;
-    /* Single column for mobile */
     gap: 20px;
 }
 
 .service-item {
-    background-color: var(--white-color);
-    border: 1px solid #ddd;
-    text-align: center;
+    background-color: var(--secondary-color);
     display: flex;
     flex-direction: column;
 }
 
 .service-item img {
+    width: 100%;
     height: 200px;
     object-fit: cover;
-    width: 100%;
 }
 
-.service-item .card-content {
-    /* Feedback: Wrapper for h3, p, button to style it(spacing) */
-    padding: 15px;
+.service-info-wrapper {
+    padding: 20px;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    /* Allows content to fill space evenly */
 }
 
-.service-item .card-content h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
+.service-info-wrapper h3 {
+    margin-top: 0;
 }
 
-.service-item .card-content p {
-    flex-grow: 1;
-    /* Pushes button to the bottom */
-}
-
-.btn-card {
-    background-color: var(--primary-color);
+.btn-service {
+    margin-top: auto;
+    background-color: var(--dark-color);
     color: var(--white-color);
     border: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
+    font-weight: 700;
     cursor: pointer;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    min-width: 160px;
     text-transform: uppercase;
-    font-weight: bold;
-    transition: background-color 0.3s;
 }
 
-.btn-card:hover {
-    background-color: #a37205;
-}
-
-/* ----------------------------------------------------------------
-   Vision Section 
-   ---------------------------------------------------------------- */
+/* =========================================
+   6. VISION SECTION
+   ========================================= */
 #vision {
     position: relative;
-    padding: 50px 15px;
-    text-align: center;
-    overflow: hidden;
-    /* Important to contain absolute image */
+    background-color: #000;
 }
 
-#vision .vision-image {
-    /* For mobile, the image just acts as a background element */
+.vision-image {
     width: 100%;
-    height: 100%;
+    height: 350px;
     object-fit: cover;
-    filter: brightness(0.4);
+    opacity: 0.5;
+}
+
+.vision-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
-}
-
-#vision .vision-content {
-    /* Feedback: Wrap content to move it on top of the image */
-    position: relative;
-    z-index: 2;
-    color: var(--white-color);
-    background-color: rgba(34, 34, 34, 0.5);
-    /* Semi-transparent overlay for text readability */
-    padding: 30px;
-}
-
-/* ----------------------------------------------------------------
-   Team Section 
-   ---------------------------------------------------------------- */
-#team {
-    background-color: var(--secondary-color);
-    /* Match desktop mockup color */
-    padding: 30px 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-.team-grid {
-    display: grid;
-    /* Requirement: Use CSS Grid */
-    grid-template-columns: 1fr;
-    /* Single column for mobile */
-    gap: 20px;
+.vision-content {
+    color: var(--white-color);
+    padding: 20px;
+}
+
+/* =========================================
+   7. TEAM SECTION (Checkerboard)
+   ========================================= */
+#team {
+    padding: 40px 0;
+    background-color: var(--white-color);
 }
 
 .team-member {
-    text-align: center;
-    background-color: var(--white-color);
-    padding: 20px;
-    border-radius: 5px;
+    /* Mobile: Stacked, Text box yellow */
+    background-color: var(--secondary-color);
+    margin-bottom: 20px;
 }
 
-.team-member img {
-    width: 150px;
-    height: 150px;
+.team-img-col img {
+    width: 100%;
+    height: 300px;
     object-fit: cover;
-    border-radius: 50%;
-    margin: 0 auto 15px;
-    border: 5px solid var(--primary-color);
 }
 
-.team-member .team-content {
-    /* Feedback: Wrapper for name, title, and content */
-    padding: 10px;
+.team-info-wrapper {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    /* Yellow text box */
 }
 
-.team-member .job-title {
+.job-title {
     color: var(--primary-color);
-    font-weight: bold;
-    margin-bottom: 5px;
+    /* Gold text for title */
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 10px;
 }
 
-/* ----------------------------------------------------------------
-   Contact Section (Requirement: Flexbox for one element - Contact layout)
-   ---------------------------------------------------------------- */
+/* =========================================
+   8. CONTACT SECTION
+   ========================================= */
 #contact {
-    background-color: var(--dark-color);
-    color: var(--white-color);
-    padding: 30px 15px;
-    text-align: center;
+    padding: 40px 15px;
+    margin-bottom: 40px;
 }
 
-#contact h2 {
-    color: var(--primary-color);
-}
-
-.contact-flex-container {
-    display: flex;
-    /* Requirement: CSS Flexbox */
-    flex-direction: column;
-    /* Stack vertically on mobile */
-    gap: 30px;
-    text-align: left;
-}
-
+/* Form Container - Yellow Background */
 .contact-form {
     background-color: var(--secondary-color);
-    color: var(--dark-color);
     padding: 20px;
-    border-radius: 5px;
-}
-
-.contact-form h3 {
-    color: var(--primary-color);
-    text-align: center;
+    margin-bottom: 20px;
 }
 
 .form-group {
@@ -389,7 +363,7 @@ nav ul li a:hover {
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .form-group input,
@@ -397,208 +371,183 @@ nav ul li a:hover {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
 }
 
-.btn-submit {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s;
+.contact-location {
+    margin-bottom: 20px;
 }
 
-.btn-submit:hover {
-    background-color: #a37205;
-}
-
-.contact-info {
-    /* Grouping hours and location for better layout control on desktop */
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-#hours h3,
-#location h3 {
-    color: var(--primary-color);
-    text-align: center;
-}
-
-#hours table {
+/* Hours Table */
+.contact-hours table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-    color: var(--white-color);
-    /* Ensure table text is visible on dark background */
+    margin-top: 10px;
 }
 
-#hours th,
-#hours td {
+.contact-hours th,
+.contact-hours td {
+    border: 1px solid #ddd;
     padding: 10px;
-    border: 1px solid var(--primary-color);
-}
-
-#hours thead th {
-    background-color: var(--primary-color);
-    color: var(--dark-color);
-    font-weight: bold;
     text-align: left;
 }
 
-#location {
-    text-align: center;
+.contact-hours thead th {
+    background-color: var(--secondary-color);
 }
 
-#location .map-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    margin: 15px auto 0;
-}
-
-
-/* ----------------------------------------------------------------
-   Footer
-   ---------------------------------------------------------------- */
+/* =========================================
+   9. FOOTER
+   ========================================= */
 footer {
     background-color: var(--dark-color);
     color: var(--white-color);
     text-align: center;
-    padding: 15px;
-    font-size: 0.9em;
+    padding: 20px;
+    font-size: 0.9rem;
 }
 
-/* ----------------------------------------------------------------
-   Desktop Media Query (Requirement: min-width 760px)
-   ---------------------------------------------------------------- */
+
+/* =========================================
+   10. DESKTOP STYLES (Min-width: 760px)
+   ========================================= */
 @media (min-width: 760px) {
 
-    /* Header/Nav Layout */
-    header {
+    /* Header Row */
+    .header-content {
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-        padding: 10px 15px;
     }
 
-    nav {
-        flex-grow: 1;
-        /* Allows nav to take up available space */
-        margin: 0 20px;
+    .logo-nav-wrapper {
+        flex-direction: row;
+        gap: 30px;
     }
 
-    nav ul {
-        margin-bottom: 0;
-    }
-
-    /* Hero */
+    /* Hero Left Align */
     #hero {
-        text-align: left;
-        align-items: flex-start;
-        padding-left: 10%;
+        justify-content: flex-start;
+        /* Align box to left */
     }
 
-    /* About Us Layout (Side-by-side) */
-    #about {
+    .hero-content-box {
+        margin-left: 50px;
+        text-align: left;
+        max-width: 50%;
+    }
+
+    /* About Us: Side by Side (Image Left, Content Right) */
+    .about-grid {
         display: flex;
+        gap: 30px;
         align-items: center;
-        text-align: left;
-        padding: 60px 15px;
     }
 
-    #about .about-image {
-        flex: 1;
-        margin-right: 30px;
-        margin-bottom: 0;
-    }
-
-    #about .about-content {
+    .about-image {
         flex: 1;
     }
 
-    /* Services Grid Layout (Match Desktop Mockup) */
-    .services-grid {
-        grid-template-columns: repeat(3, 1fr);
-        /* Three columns on desktop */
-    }
-
-    .service-item {
-        /* Remove card flex for grid layout */
-        display: block;
-    }
-
-    .service-item .card-content {
-        /* Adjust padding */
-        padding: 10px 15px 20px;
-    }
-
-    /* Vision Section (Content on right, image filling space) */
-    #vision {
-        display: flex;
-        align-items: center;
-        min-height: 400px;
+    .about-content {
+        flex: 1;
         padding: 0;
-        /* Remove padding as content is explicitly padded */
     }
 
-    #vision .vision-content {
-        width: 40%;
-        margin-left: auto;
-        /* Push content to the right */
-        padding: 40px;
-        background-color: rgba(34, 34, 34, 0.85);
-        /* Darker overlay for better contrast */
+    /* SERVICES GRID: 2 Top / 3 Bottom Layout */
+    .services-grid {
+        grid-template-columns: repeat(6, 1fr);
     }
 
-    /* Team Grid Layout (Match Desktop Mockup) */
+    .service-item:nth-child(1),
+    .service-item:nth-child(2) {
+        grid-column: span 3;
+    }
+
+    .service-item:nth-child(3),
+    .service-item:nth-child(4),
+    .service-item:nth-child(5) {
+        grid-column: span 2;
+    }
+
+    /* Vision: Content Right */
+    .vision-overlay {
+        justify-content: flex-end;
+        text-align: left;
+    }
+
+    .vision-content {
+        width: 50%;
+        padding-right: 50px;
+    }
+
+    /* TEAM GRID - CHECKERBOARD LAYOUT */
     .team-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* Two columns on desktop */
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        /* Remove gap for solid look */
+        max-width: 100%;
+        padding: 0 15px;
     }
 
     .team-member {
-        /* Ensure text is left-aligned as per mockup */
-        text-align: left;
         display: flex;
-        align-items: center;
+        align-items: stretch;
+        margin-bottom: 0;
     }
 
-    .team-member img {
-        margin: 0 15px 0 0;
+    .team-img-col {
+        width: 50%;
+        /* Ensure image fills the height */
+        display: flex;
     }
 
-    /* Contact Section Layout (Form and Info Side-by-Side) */
-    .contact-flex-container {
-        flex-direction: row;
-        /* Side-by-side on desktop */
-        text-align: left;
+    .team-img-col img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .team-info-wrapper {
+        width: 50%;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Bob Rite: Text Left, Image Right */
+    .team-member:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    /* CONTACT LAYOUT */
+    .contact-top {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 30px;
     }
 
     .contact-form {
-        flex: 2;
-        /* Form takes up more space */
-        padding: 30px;
-    }
-
-    .contact-info {
         flex: 1;
-        /* Info section takes less space */
-        gap: 15px;
-        /* Reduce gap on desktop */
+        margin-bottom: 0;
     }
 
-    #hours table {
-        text-align: left;
+    .contact-location {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
     }
 
-    #location .map-image {
-        height: 150px;
+    .map-wrapper {
+        flex-grow: 1;
+    }
+
+    .map-wrapper img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .contact-hours {
+        width: 100%;
     }
 }
