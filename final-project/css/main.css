@@ -1,0 +1,604 @@
+/* ----------------------------------------------------------------
+   CSS Reset (Requirement: Add CSS reset code)
+   ---------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    /* This ensures padding and border are included in the element's total width and height */
+    box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------
+   Global Styles (Requirement: Mobile-first approach, Open Sans, Colors)
+   ---------------------------------------------------------------- */
+
+:root {
+    /* Requirement: Color values used in the layout */
+    --primary-color: #c78c06;
+    /* Yellow/Gold */
+    --secondary-color: #ffe6ac;
+    /* Light Yellow/Cream */
+    --dark-color: #222;
+    /* Near Black */
+    --white-color: #fff;
+    /* White */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    /* Requirement: Open Sans font */
+    color: var(--dark-color);
+    background-color: var(--white-color);
+}
+
+/* Utility class for accessibility (e.g., hiding the search label visually) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.container {
+    /* Requirement: The maximum width of the container is 1200px */
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Center the container */
+    padding: 0 15px;
+    /* Added padding for mobile spacing */
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #a37205;
+    /* Darker primary color on hover */
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ----------------------------------------------------------------
+   Header & Navigation (Requirement: Flexbox for one element - Header nav)
+   ---------------------------------------------------------------- */
+
+header {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding: 10px 15px;
+    /* Flexbox for the whole header on mobile (stacking logo/nav/search) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header .logo img {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    /* Requirement: Flexbox for nav links */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.search-bar form {
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: 1px solid var(--primary-color);
+    border-right: none;
+    outline: none;
+    width: 150px;
+}
+
+.search-bar button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #a37205;
+}
+
+/* ----------------------------------------------------------------
+   Hero Section 
+   ---------------------------------------------------------------- */
+#hero {
+    background: var(--secondary-color) url('../images/main-banner.jpg') no-repeat center center/cover;
+    color: var(--white-color);
+    /* Text color changed to white for contrast on the background image */
+    text-align: center;
+    padding: 50px 20px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Improve readability */
+}
+
+#hero p {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+
+/* ----------------------------------------------------------------
+   About Us Section 
+   ---------------------------------------------------------------- */
+#about {
+    padding: 30px 15px;
+    text-align: center;
+}
+
+#about .about-image {
+    margin-bottom: 20px;
+}
+
+/* ----------------------------------------------------------------
+   Services Section (Requirement: CSS Grid for one element)
+   ---------------------------------------------------------------- */
+#services {
+    background-color: var(--secondary-color);
+    padding: 30px 15px;
+    text-align: center;
+}
+
+#services h2 {
+    color: var(--dark-color);
+}
+
+.services-grid {
+    display: grid;
+    /* Requirement: CSS Grid */
+    grid-template-columns: 1fr;
+    /* Single column for mobile */
+    gap: 20px;
+}
+
+.service-item {
+    background-color: var(--white-color);
+    border: 1px solid #ddd;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-item img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.service-item .card-content {
+    /* Feedback: Wrapper for h3, p, button to style it(spacing) */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Allows content to fill space evenly */
+}
+
+.service-item .card-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.service-item .card-content p {
+    flex-grow: 1;
+    /* Pushes button to the bottom */
+}
+
+.btn-card {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-card:hover {
+    background-color: #a37205;
+}
+
+/* ----------------------------------------------------------------
+   Vision Section 
+   ---------------------------------------------------------------- */
+#vision {
+    position: relative;
+    padding: 50px 15px;
+    text-align: center;
+    overflow: hidden;
+    /* Important to contain absolute image */
+}
+
+#vision .vision-image {
+    /* For mobile, the image just acts as a background element */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#vision .vision-content {
+    /* Feedback: Wrap content to move it on top of the image */
+    position: relative;
+    z-index: 2;
+    color: var(--white-color);
+    background-color: rgba(34, 34, 34, 0.5);
+    /* Semi-transparent overlay for text readability */
+    padding: 30px;
+}
+
+/* ----------------------------------------------------------------
+   Team Section 
+   ---------------------------------------------------------------- */
+#team {
+    background-color: var(--secondary-color);
+    /* Match desktop mockup color */
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    /* Requirement: Use CSS Grid */
+    grid-template-columns: 1fr;
+    /* Single column for mobile */
+    gap: 20px;
+}
+
+.team-member {
+    text-align: center;
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    border: 5px solid var(--primary-color);
+}
+
+.team-member .team-content {
+    /* Feedback: Wrapper for name, title, and content */
+    padding: 10px;
+}
+
+.team-member .job-title {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* ----------------------------------------------------------------
+   Contact Section (Requirement: Flexbox for one element - Contact layout)
+   ---------------------------------------------------------------- */
+#contact {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding: 30px 15px;
+    text-align: center;
+}
+
+#contact h2 {
+    color: var(--primary-color);
+}
+
+.contact-flex-container {
+    display: flex;
+    /* Requirement: CSS Flexbox */
+    flex-direction: column;
+    /* Stack vertically on mobile */
+    gap: 30px;
+    text-align: left;
+}
+
+.contact-form {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.contact-form h3 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #a37205;
+}
+
+.contact-info {
+    /* Grouping hours and location for better layout control on desktop */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#hours h3,
+#location h3 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+#hours table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    color: var(--white-color);
+    /* Ensure table text is visible on dark background */
+}
+
+#hours th,
+#hours td {
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+}
+
+#hours thead th {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    font-weight: bold;
+    text-align: left;
+}
+
+#location {
+    text-align: center;
+}
+
+#location .map-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin: 15px auto 0;
+}
+
+
+/* ----------------------------------------------------------------
+   Footer
+   ---------------------------------------------------------------- */
+footer {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+/* ----------------------------------------------------------------
+   Desktop Media Query (Requirement: min-width 760px)
+   ---------------------------------------------------------------- */
+@media (min-width: 760px) {
+
+    /* Header/Nav Layout */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+    }
+
+    nav {
+        flex-grow: 1;
+        /* Allows nav to take up available space */
+        margin: 0 20px;
+    }
+
+    nav ul {
+        margin-bottom: 0;
+    }
+
+    /* Hero */
+    #hero {
+        text-align: left;
+        align-items: flex-start;
+        padding-left: 10%;
+    }
+
+    /* About Us Layout (Side-by-side) */
+    #about {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        padding: 60px 15px;
+    }
+
+    #about .about-image {
+        flex: 1;
+        margin-right: 30px;
+        margin-bottom: 0;
+    }
+
+    #about .about-content {
+        flex: 1;
+    }
+
+    /* Services Grid Layout (Match Desktop Mockup) */
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* Three columns on desktop */
+    }
+
+    .service-item {
+        /* Remove card flex for grid layout */
+        display: block;
+    }
+
+    .service-item .card-content {
+        /* Adjust padding */
+        padding: 10px 15px 20px;
+    }
+
+    /* Vision Section (Content on right, image filling space) */
+    #vision {
+        display: flex;
+        align-items: center;
+        min-height: 400px;
+        padding: 0;
+        /* Remove padding as content is explicitly padded */
+    }
+
+    #vision .vision-content {
+        width: 40%;
+        margin-left: auto;
+        /* Push content to the right */
+        padding: 40px;
+        background-color: rgba(34, 34, 34, 0.85);
+        /* Darker overlay for better contrast */
+    }
+
+    /* Team Grid Layout (Match Desktop Mockup) */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns on desktop */
+    }
+
+    .team-member {
+        /* Ensure text is left-aligned as per mockup */
+        text-align: left;
+        display: flex;
+        align-items: center;
+    }
+
+    .team-member img {
+        margin: 0 15px 0 0;
+    }
+
+    /* Contact Section Layout (Form and Info Side-by-Side) */
+    .contact-flex-container {
+        flex-direction: row;
+        /* Side-by-side on desktop */
+        text-align: left;
+    }
+
+    .contact-form {
+        flex: 2;
+        /* Form takes up more space */
+        padding: 30px;
+    }
+
+    .contact-info {
+        flex: 1;
+        /* Info section takes less space */
+        gap: 15px;
+        /* Reduce gap on desktop */
+    }
+
+    #hours table {
+        text-align: left;
+    }
+
+    #location .map-image {
+        height: 150px;
+    }
+}
