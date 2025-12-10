@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Three Star Media - Welcome</title>
-    </head>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
 <body>
 
     <header>
@@ -14,8 +18,8 @@
 
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -24,17 +28,19 @@
 
         <div class="search-bar">
             <form action="#" method="get">
-                <input type="text" name="search" placeholder="Search">
+                <label for="search" class="visually-hidden">Search</label>
+                <input type="text" id="search" name="search" placeholder="Search">
                 <button type="submit">Search</button>
             </form>
         </div>
     </header>
 
-    <main>
+    <main class="container">
         <section id="hero">
             <h1>Welcome to Three Star Media</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum
+                vestibulum.
                 Cras venenatis euismod malesuada.
             </p>
             <a href="#contact" class="btn">Connect with us &gt;</a>
@@ -47,7 +53,8 @@
             <div class="about-content">
                 <h2>About Us</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra, tellus sit amet congue vulputate, 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pharetra, tellus sit amet congue
+                    vulputate,
                     nisi erat iaculis nibh, vitae feugiat sapien ante eget velit. Fusce urna feugiat.
                 </p>
                 <p>
@@ -58,137 +65,166 @@
 
         <section id="services">
             <h2>Our Services</h2>
-            
+
             <div class="services-grid">
                 <article class="service-item">
-                    <img src="images/service-digital.jpg" alt="Digital Transformation">
-                    <h3>Digital Transformation</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum.</p>
-                    <button type="button">Get in touch</button>
+                    <img src="images/digital.jpg" alt="Digital Transformation">
+                    <div class="card-content">
+                        <h3>Digital Transformation</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum.</p>
+                        <button type="button" class="btn-card">Get in touch</button>
+                    </div>
                 </article>
 
                 <article class="service-item">
                     <img src="images/marketing.jpg" alt="Marketing Analytics">
-                    <h3>Marketing</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum.</p>
-                    <button type="button">Get in touch</button>
+                    <div class="card-content">
+                        <h3>Marketing</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum.</p>
+                        <button type="button" class="btn-card">Get in touch</button>
+                    </div>
                 </article>
 
                 <article class="service-item">
                     <img src="images/video.jpg" alt="Video Production">
-                    <h3>Video Production</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum.</p>
-                    <button type="button">Get in touch</button>
+                    <div class="card-content">
+                        <h3>Video Production</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum.</p>
+                        <button type="button" class="btn-card">Get in touch</button>
+                    </div>
                 </article>
 
                 <article class="service-item">
                     <img src="images/web.jpg" alt="Web Development">
-                    <h3>Web Development</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum.</p>
-                    <button type="button">Get in touch</button>
+                    <div class="card-content">
+                        <h3>Web Development</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum.</p>
+                        <button type="button" class="btn-card">Get in touch</button>
+                    </div>
                 </article>
 
                 <article class="service-item">
                     <img src="images/print.jpg" alt="Print Services">
-                    <h3>Print</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum.</p>
-                    <button type="button">Get in touch</button>
+                    <div class="card-content">
+                        <h3>Print</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla condimentum.</p>
+                        <button type="button" class="btn-card">Get in touch</button>
+                    </div>
                 </article>
             </div>
         </section>
 
         <section id="vision">
             <img src="images/vision.jpg" alt="Vision illustration" class="vision-image">
-            <h2>Our Vision</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mattis leo eget ipsum consequat, 
-                quis semper turpis porta.
-            </p>
-            <button class="btn">Learn More</button>
+            <div class="vision-content">
+                <h2>Our Vision</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mattis leo eget ipsum consequat,
+                    quis semper turpis porta.
+                </p>
+                <button class="btn">Learn More</button>
+            </div>
         </section>
 
         <section id="team">
             <h2>Our Team</h2>
-            
+
             <div class="team-grid">
                 <article class="team-member">
                     <img src="images/john.jpg" alt="John Doe">
-                    <h3>John Doe</h3>
-                    <p class="job-title">CEO & Co-Founder</p>
-                    <p class="bio">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
-                    </p>
+                    <div class="team-content">
+                        <h3>John Doe</h3>
+                        <p class="job-title">CEO & Co-Founder</p>
+                        <p class="bio">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida
+                            pellentesque urna varius vitae.
+                        </p>
+                    </div>
                 </article>
 
                 <article class="team-member">
                     <img src="images/bob.jpg" alt="Bob Rite">
-                    <h3>Bob Rite</h3>
-                    <p class="job-title">CFO & Co-Founder</p>
-                    <p class="bio">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
-                    </p>
+                    <div class="team-content">
+                        <h3>Bob Rite</h3>
+                        <p class="job-title">CFO & Co-Founder</p>
+                        <p class="bio">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida
+                            pellentesque urna varius vitae.
+                        </p>
+                    </div>
                 </article>
             </div>
         </section>
 
         <section id="contact">
             <h2>Contact Us</h2>
-            <h3>Send us a message</h3>
-            
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+
+            <div class="contact-flex-container">
+                <div class="contact-form">
+                    <h3>Send us a message</h3>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Send</button>
+                    </form>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="contact-info">
+                    <section id="hours">
+                        <h3>Hours of Operation</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Days</th>
+                                    <th>Hours</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Monday - Friday</td>
+                                    <td>9:00 AM - 6:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Sat</td>
+                                    <td>10:00 AM - 4:00 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Sun</td>
+                                    <td>Closed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section id="location">
+                        <h3>Location</h3>
+                        <img src="images/map.jpg" alt="Map showing location of Three Star Media" class="map-image">
+                    </section>
                 </div>
-
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-
-                <button type="submit" class="btn-submit">Send</button>
-            </form>
+            </div>
         </section>
-
-        <section id="hours">
-            <h2>Hours of Operation</h2>
-            <table>
-                <tr>
-                    <th>Days</th>
-                    <th>Hours</th>
-                </tr>
-                <tr>
-                    <td>Mon - Fri</td>
-                    <td>9:00 AM - 6:00 PM</td>
-                </tr>
-                <tr>
-                    <td>Sat</td>
-                    <td>10:00 AM - 4:00 PM</td>
-                </tr>
-                <tr>
-                    <td>Sun</td>
-                    <td>Closed</td>
-                </tr>
-            </table>
-        </section>
-
-        <section id="location">
-            <h2>Location</h2>
-            <img src="images/map.jpg" alt="Map showing location of Three Star Media" class="map-image">
-        </section>
-
     </main>
 
     <footer>
         <p>Copyright &copy; 2023 Three Star Media</p>
-        <p></p>
-        <p>All images are taken from Unsplash</p></p>
+        <p>All images are taken from Unsplash</p>
     </footer>
 
+    <span class="visually-hidden">Image of the Three Star Media website mobile view mock-up.</span>
+
 </body>
+
 </html>
